@@ -16,9 +16,12 @@ public class App {
 		Author author = (Author) appContext.getBean("author");
 		System.out.println(author.getId());
 		System.out.println(author.getName());
+<<<<<<< HEAD
 
 		Book book = (Book) appContext.getBean("book");
 		System.out.println(book.getTitle());
 		System.out.println(book.getAuthor().getName());
+=======
+>>>>>>> 796bc4c4c322ebed1355468f2288b24b59fa2aca
 	}
 }
