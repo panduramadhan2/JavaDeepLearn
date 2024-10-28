@@ -1,5 +1,7 @@
 package com.subrutin;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.subrutin.domain.Author;
 
 /**
@@ -9,8 +11,9 @@ import com.subrutin.domain.Author;
 public class App {
 	public static void main(String[] args) {
 		System.out.println("Hello World!");
-		Author author = new Author();
-		author.setId(1L);
-		author.setName("Karen Armstrong");
+		ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext("application-context.xml");
+		Author author = (Author) appContext.getBean("author");
+		System.out.println(author.getId());
+		System.out.println(author.getName());
 	}
 }
