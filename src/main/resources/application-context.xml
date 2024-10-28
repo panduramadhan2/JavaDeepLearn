@@ -10,11 +10,10 @@
 		<property name="id" value="1"></property>
 		<property name="name" value="Karen Armstrong"></property>
 	</bean>
-<<<<<<< HEAD
+
 	<bean id="book" class="com.subrutin.domain.Book">
 		<constructor-arg ref="author"></constructor-arg>
 		<property name="title" value="The Lost Art of Scripture"></property>
 	</bean>
-=======
->>>>>>> 796bc4c4c322ebed1355468f2288b24b59fa2aca
+
 </beans>
