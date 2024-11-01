@@ -30,9 +30,24 @@
 				<prop key="mail.smtp.auth">true</prop>
 				<prop key="mail.smtp.starttls.enable">true</prop>
 				<prop key="mail.smtp.host">sandbox.smtp.mailtrap.io</prop>
-				<prop key="mail.smtp.port">25</prop>
+				<prop key="mail.smtp.port">2525</prop>
 				<prop key="mail.smtp.ssl.trust">sandbox.smtp.mailtrap.io</prop>
 			</props>
 		</constructor-arg>
+		<constructor-arg>
+			<bean class="jakarta.mail.Authenticator">
+				<lookup-method name="getPasswordAuthentication"
+					bean="passwordAuthentication" />
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean id="passwordAuthentication"
+		class="jakarta.mail.PasswordAuthentication">
+		<constructor-arg value="96483c70896812"></constructor-arg>
+		<constructor-arg value="65a18746327a45"></constructor-arg>
+	</bean>
+	<bean id="emailService" class="com.subrutin.service.EmailService">
+		<constructor-arg ref="mailSession"></constructor-arg>
 	</bean>
 </beans>
