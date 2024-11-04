@@ -2,7 +2,7 @@ package com.subrutin;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.subrutin.service.EmailService;
+import com.subrutin.service.AuthSerivce;
 
 /**
  * Hello world!
@@ -19,7 +19,9 @@ public class App {
 //		Book book = (Book) appContext.getBean("book2");
 //		System.out.println(book.getTitle());
 //		System.out.println(book.getAuthor().getName());
-		EmailService emailService = (EmailService) appContext.getBean("emailService");
-		emailService.sendMail("destination@gmail.com", "Your OTP", "Your OTP is 12345");
+//		EmailServiceImpl emailService = (EmailServiceImpl) appContext.getBean("emailService");
+//		emailService.sendMail("destination@gmail.com", "Your OTP", "Your OTP is 12345");
+		AuthSerivce authService = (AuthSerivce) appContext.getBean("authService");
+		authService.login("destination@gmail.com");
 	}
 }

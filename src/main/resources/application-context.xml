@@ -47,7 +47,10 @@
 		<constructor-arg value="96483c70896812"></constructor-arg>
 		<constructor-arg value="65a18746327a45"></constructor-arg>
 	</bean>
-	<bean id="emailService" class="com.subrutin.service.EmailService">
+	<bean id="emailService" class="com.subrutin.service.impl.EmailServiceImpl">
 		<constructor-arg ref="mailSession"></constructor-arg>
+	</bean>
+	<bean id="authService" class="com.subrutin.service.impl.AuthServiceImpl">
+		<constructor-arg ref="emailService"></constructor-arg>
 	</bean>
 </beans>
